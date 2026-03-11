@@ -6,26 +6,32 @@
   <title>Laíza Costa | Data Scientist</title>
   <style>
     :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #667085;
-      --primary: #6d5bd0;
-      --primary-light: #ece9ff;
-      --border: #e5e7eb;
-      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --bg: #0b1020;
+      --bg-soft: #12182b;
+      --card: #151c31;
+      --text: #f3f4f6;
+      --muted: #b6bfd3;
+      --primary: #a78bfa;
+      --primary-strong: #8b5cf6;
+      --border: #27304a;
+      --tag-bg: #201b3a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
       --radius: 18px;
-      --max: 1080px;
+      --max: 1100px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -33,28 +39,29 @@
     .container {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 32px 20px 72px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%);
+      background: linear-gradient(135deg, #151c31 0%, #1d2440 100%);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 40px 28px;
+      border-radius: 26px;
+      padding: 42px 28px;
       box-shadow: var(--shadow);
       margin-bottom: 28px;
     }
 
     .hero h1 {
       margin: 0 0 8px;
-      font-size: 42px;
+      font-size: 44px;
+      letter-spacing: -0.5px;
     }
 
     .hero p {
       margin: 0;
       color: var(--muted);
       font-size: 18px;
-      max-width: 700px;
+      max-width: 760px;
     }
 
     .hero-buttons {
@@ -71,30 +78,33 @@
       border-radius: 999px;
       font-weight: bold;
       transition: 0.2s ease;
+      border: 1px solid var(--border);
     }
 
     .btn-primary {
-      background: var(--primary);
+      background: var(--primary-strong);
       color: white;
+      border-color: transparent;
     }
 
     .btn-secondary {
-      background: white;
+      background: transparent;
       color: var(--text);
-      border: 1px solid var(--border);
     }
 
     .btn:hover {
       transform: translateY(-1px);
+      opacity: 0.95;
     }
 
     .section {
-      margin-top: 30px;
+      margin-top: 34px;
     }
 
     .section h2 {
       font-size: 28px;
       margin-bottom: 16px;
+      letter-spacing: -0.3px;
     }
 
     .card {
@@ -112,12 +122,13 @@
     }
 
     .tag {
-      background: var(--primary-light);
-      color: #4338ca;
+      background: var(--tag-bg);
+      color: #d8ccff;
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: bold;
+      border: 1px solid #31295f;
     }
 
     .timeline {
@@ -126,9 +137,9 @@
     }
 
     .timeline-item {
-      background: white;
+      background: var(--card);
       border: 1px solid var(--border);
-      border-left: 5px solid var(--primary);
+      border-left: 5px solid var(--primary-strong);
       border-radius: 14px;
       padding: 18px 20px;
       box-shadow: var(--shadow);
@@ -152,7 +163,7 @@
     }
 
     .project-card {
-      background: white;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 20px;
@@ -174,9 +185,23 @@
     }
 
     .project-card a {
-      color: var(--primary);
+      color: #c4b5fd;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .list-card ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list-card li {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .list-card strong {
+      color: var(--text);
     }
 
     .contact-links {
@@ -186,9 +211,26 @@
     }
 
     .contact-links a {
-      color: var(--primary);
+      color: #c4b5fd;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .contact-links a:hover,
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 820px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 700px) {
@@ -207,12 +249,14 @@
 
     <section class="hero">
       <h1>Laíza Costa</h1>
-      <p>Data Scientist | Analytics | Machine Learning | NLP | IA generativa | Computational Linguistics.</p>
+      <p>
+        Data Scientist com foco em Machine Learning, NLP, IA generativa e aplicações de dados para produtos, recomendação e automação.
+      </p>
 
       <div class="hero-buttons">
         <a class="btn btn-primary" href="https://github.com/LaizaCostaa" target="_blank">GitHub</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/la%C3%ADza-costa-ba86a62a9/" target="_blank">LinkedIn</a>
         <a class="btn btn-secondary" href="mailto:laizamare@hotmail.com">Email</a>
-        <a class="btn btn-secondary" href="https://linkedin.com/laíza-costa-ba86a62a9" target="_blank">Linkedin</a>
         <a class="btn btn-secondary" href="https://lookerstudio.google.com/reporting/6a72a9cf-9a1b-4da6-8703-4aea5c166ae9" target="_blank">Portfólio</a>
       </div>
     </section>
@@ -221,9 +265,9 @@
       <h2>Sobre</h2>
       <div class="card">
         <p>
-          Cientista de Dados com experiência em em Machine Learning e LLMs, com projetos de modelos preditivos,
-          sistemas de recomendação e automação com IA generativa. Possui experiência em  iniciativas para recrutamento e seleção inteligente e geração
-          automática de documentação usando IA generativa e LLMs e na construção de sistemas recomendação de produtos
+          Cientista de Dados com 2 anos de experiência no desenvolvimento de soluções em Machine Learning e LLMs, com atuação em modelos preditivos,
+          sistemas de recomendação, recrutamento inteligente e automação com IA generativa. Possui mestrado em Linguística, trazendo uma visão forte
+          sobre linguagem para projetos que envolvem Inteligência Artificial e NLP.
         </p>
       </div>
     </section>
@@ -236,12 +280,15 @@
           <span class="tag">Pandas</span>
           <span class="tag">NumPy</span>
           <span class="tag">Scikit-learn</span>
+          <span class="tag">Matplotlib</span>
           <span class="tag">Statsmodels</span>
           <span class="tag">SQL</span>
           <span class="tag">AWS</span>
           <span class="tag">Machine Learning</span>
+          <span class="tag">Sistemas de Recomendação</span>
           <span class="tag">NLP</span>
           <span class="tag">LLMs</span>
+          <span class="tag">IA Generativa</span>
           <span class="tag">Power BI</span>
           <span class="tag">Looker</span>
           <span class="tag">Streamlit</span>
@@ -256,10 +303,8 @@
           <h3>Data Scientist — Instituto Atlântico</h3>
           <div class="period">nov 2024 - atual</div>
           <div>
-            Vivência em contexto R&D contribuindo com: Soluções de recomendação de produtos e auditoria de licenças utilizando ML;  Exploração e análise de dados,
-            engenharia de atributos e experimentação contínua para melhoria do produto; Construção de modelos preditivos com Machine Learning; Aplicação
-            de IA Generativa e LLMs (Lhama) para geração e automatização de textos; Aplicação de técnicas de engenharia de prompt; Adaptação de métricas clássicas
-            de Machine Learning para avaliação de LLMs
+            Atuação em contexto de R&amp;D com recomendação de produtos, auditoria de licenças, engenharia de atributos,
+            experimentação contínua, modelos preditivos e aplicação de IA generativa e LLMs para geração e automação de textos.
           </div>
         </div>
 
@@ -267,18 +312,34 @@
           <h3>Data Scientist | Analytics — Marias S/A</h3>
           <div class="period">mar 2024 - nov 2024</div>
           <div>
-          Colaboração com equipes de RH para acelerar e aumentar a precisão dos processos de recrutamento de mulheres das empresas, gerando recomendações assertivas entre candidatas e vagas usando IA Generativa; 
-          Desenvolvimento de automações e dashboards para perfis de candidatas e compatibilidade comvagas;
-          Identificação de oportunidades de melhoria e proposição de soluções escaláveis para desafios técnicos e de negócio
+            Desenvolvimento de soluções para recrutamento inteligente com recomendações entre candidatas e vagas usando IA generativa,
+            além de dashboards analíticos, automações e proposição de soluções escaláveis para desafios de negócio.
           </div>
         </div>
 
         <div class="timeline-item">
-          <h3>Analista de Dados | Extensionista — UBTECH / Unipê</h3>
+          <h3>Portfólio de Projetos</h3>
+          <div class="period">jun 2021 - atual</div>
+          <div>
+            Desenvolvimento de projetos de Machine Learning, regressão, classificação, NLP, IA generativa e sistemas de recomendação,
+            incluindo previsão de receita, recomendação híbrida, matching de currículos e geração automática de documentação.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Analista de Dados | Extensionista — UBTECH / Fábrica de Software - Unipê</h3>
           <div class="period">mar 2021 - ago 2021</div>
           <div>
             ETL, integração com APIs, análise exploratória em Python e dashboards em Power BI
             para indicadores de vacinação contra COVID-19.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Analista de Faturamento — Vijai Elétrica LTDA</h3>
+          <div class="period">mar 2011 - fev 2013</div>
+          <div>
+            Emissão de notas fiscais, análise de importação, relatórios operacionais e melhorias em planilhas e fluxos de faturamento.
           </div>
         </div>
       </div>
@@ -289,7 +350,9 @@
       <div class="projects">
         <div class="project-card">
           <h3>📈 Série Temporal com Intervenção</h3>
-          <p>Análise do impacto de uma intervenção na receita de uma empresa com modelagem de séries temporais.</p>
+          <p>
+            Análise do impacto de uma intervenção na receita de uma empresa com modelagem de séries temporais.
+          </p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Time Series</span>
@@ -299,8 +362,10 @@
         </div>
 
         <div class="project-card">
-          <h3>🤖 NLP vs LLM</h3>
-          <p>Classificação de tickets de suporte comparando NLP tradicional com abordagem baseada em LLM.</p>
+          <h3>🤖 Classificação de Tickets de Suporte (NLP vs LLM)</h3>
+          <p>
+            Comparação entre NLP tradicional com TF-IDF + Machine Learning e abordagem baseada em LLM para classificação automática.
+          </p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">NLP</span>
@@ -310,19 +375,23 @@
         </div>
 
         <div class="project-card">
-          <h3>🧠 Gerador de Documentação</h3>
-          <p>Geração automática de documentação técnica a partir de código-fonte utilizando IA.</p>
+          <h3>🧠 Gerador Automático de Documentação com IA</h3>
+          <p>
+            Sistema que gera README, apresentações e documentos técnicos a partir de repositórios e código-fonte utilizando IA.
+          </p>
           <div class="tags">
             <span class="tag">Python</span>
-            <span class="tag">Automation</span>
             <span class="tag">IA Generativa</span>
+            <span class="tag">Automação</span>
           </div>
           <a href="https://github.com/LaizaCostaa/gerador_de_documentacao" target="_blank">Ver projeto</a>
         </div>
 
         <div class="project-card">
-          <h3>🔎 Matching de Currículos</h3>
-          <p>Correspondência semântica entre currículos e vagas com foco em recrutamento inteligente.</p>
+          <h3>🔎 Correspondência de Currículos e Vagas</h3>
+          <p>
+            Sistema de matching semântico entre currículos e requisitos de vagas com foco em recrutamento inteligente.
+          </p>
           <div class="tags">
             <span class="tag">NLP</span>
             <span class="tag">LLM</span>
@@ -333,12 +402,47 @@
       </div>
     </section>
 
+    <section class="section grid-2">
+      <div>
+        <h2>Formação</h2>
+        <div class="card list-card">
+          <ul>
+            <li><strong>Ciência de Dados</strong> — Cruzeiro do Sul (2022 - 2024)</li>
+            <li><strong>Ciência da Computação</strong> — Cruzeiro do Sul (2021 - 2022, trancado)</li>
+            <li><strong>Mestrado em Linguística</strong> — UFPB (2019 - 2021)</li>
+            <li><strong>Letras</strong> — UFPB (2011 - 2016)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Cursos e Certificações</h2>
+        <div class="card list-card">
+          <ul>
+            <li><strong>Generative AI: Prompt Engineering Basics</strong> — IBM</li>
+            <li><strong>Generative AI with Large Language Models</strong> — DeepLearning.AI</li>
+            <li><strong>Machine Learning</strong> — DeepLearning.AI</li>
+            <li><strong>Structuring Machine Learning Projects</strong> — DeepLearning.AI</li>
+            <li><strong>Unsupervised Learning, Recommenders, Reinforcement Learning</strong> — DeepLearning.AI</li>
+            <li><strong>Machine Learning with Python</strong> — IBM</li>
+            <li><strong>Google Data Analytics Specialization</strong> — Google</li>
+            <li><strong>Estatística</strong> — Enap</li>
+            <li><strong>SQL</strong> — DevMedia</li>
+            <li><strong>Lógica de Programação</strong> — DevMedia</li>
+            <li><strong>Big Data Science Bootcamp</strong> — Semantix</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <h2>Contato</h2>
       <div class="card">
         <div class="contact-links">
           <a href="mailto:laizamare@hotmail.com">Email</a>
           <a href="https://github.com/LaizaCostaa" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/la%C3%ADza-costa-ba86a62a9/" target="_blank">LinkedIn</a>
+          <a href="https://lookerstudio.google.com/reporting/6a72a9cf-9a1b-4da6-8703-4aea5c166ae9" target="_blank">Portfólio</a>
         </div>
       </div>
     </section>
