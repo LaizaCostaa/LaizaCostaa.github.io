@@ -6,18 +6,21 @@
   <title>Laíza Costa | Data Scientist</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #12182b;
-      --card: #151c31;
-      --text: #f3f4f6;
-      --muted: #b6bfd3;
-      --primary: #a78bfa;
-      --primary-strong: #8b5cf6;
-      --border: #27304a;
-      --tag-bg: #201b3a;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
-      --radius: 18px;
-      --max: 1100px;
+      --bg: #080b14;
+      --bg-2: #0d1220;
+      --card: #10182b;
+      --card-2: #0f1730;
+      --text: #f3f6ff;
+      --muted: #a9b4d0;
+      --primary: #8b5cf6;
+      --primary-2: #6d5efc;
+      --secondary: #3b82f6;
+      --border: #24304a;
+      --tag-bg: #171f3b;
+      --tag-text: #d8d4ff;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --radius: 20px;
+      --max: 1120px;
     }
 
     * {
@@ -31,44 +34,66 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 30%),
+        linear-gradient(180deg, #060912 0%, #0a0f1d 100%);
+      line-height: 1.65;
     }
 
     .container {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 32px 20px 72px;
+      padding: 28px 20px 70px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #151c31 0%, #1d2440 100%);
+      background: linear-gradient(135deg, rgba(18, 24, 45, 0.95) 0%, rgba(24, 24, 50, 0.96) 100%);
       border: 1px solid var(--border);
-      border-radius: 26px;
+      border-radius: 28px;
       padding: 42px 28px;
       box-shadow: var(--shadow);
-      margin-bottom: 28px;
+      margin-bottom: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      top: -80px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.22), transparent 60%);
+      pointer-events: none;
     }
 
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 44px;
-      letter-spacing: -0.5px;
+      margin: 0 0 12px;
+      font-size: 52px;
+      letter-spacing: -1px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero p {
       margin: 0;
       color: var(--muted);
       font-size: 18px;
-      max-width: 760px;
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-buttons {
-      margin-top: 22px;
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      position: relative;
+      z-index: 1;
     }
 
     .btn {
@@ -82,19 +107,21 @@
     }
 
     .btn-primary {
-      background: var(--primary-strong);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
       color: white;
       border-color: transparent;
+      box-shadow: 0 8px 20px rgba(109, 94, 252, 0.35);
     }
 
     .btn-secondary {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.02);
       color: var(--text);
+      backdrop-filter: blur(4px);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      opacity: 0.95;
+      opacity: 0.97;
     }
 
     .section {
@@ -104,15 +131,21 @@
     .section h2 {
       font-size: 28px;
       margin-bottom: 16px;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.4px;
+      color: #eef2ff;
     }
 
     .card {
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(15, 23, 48, 0.98), rgba(13, 20, 37, 0.98));
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 24px;
       box-shadow: var(--shadow);
+    }
+
+    .card p {
+      margin: 0;
+      color: #dbe4ff;
     }
 
     .tags {
@@ -123,37 +156,42 @@
 
     .tag {
       background: var(--tag-bg);
-      color: #d8ccff;
+      color: var(--tag-text);
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: bold;
-      border: 1px solid #31295f;
+      border: 1px solid #2a3761;
     }
 
     .timeline {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
     .timeline-item {
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(14, 22, 42, 0.98), rgba(11, 18, 34, 0.98));
       border: 1px solid var(--border);
-      border-left: 5px solid var(--primary-strong);
-      border-radius: 14px;
-      padding: 18px 20px;
+      border-left: 5px solid var(--primary);
+      border-radius: 16px;
+      padding: 20px 22px;
       box-shadow: var(--shadow);
     }
 
     .timeline-item h3 {
-      margin: 0 0 4px;
+      margin: 0 0 6px;
       font-size: 18px;
+      color: #f8faff;
     }
 
     .timeline-item .period {
-      color: var(--muted);
+      color: #93a5d1;
       font-size: 14px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item div:last-child {
+      color: #dbe4ff;
     }
 
     .projects {
@@ -163,7 +201,7 @@
     }
 
     .project-card {
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(15, 23, 48, 0.98), rgba(10, 17, 33, 0.98));
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 20px;
@@ -176,6 +214,7 @@
     .project-card h3 {
       margin: 0;
       font-size: 18px;
+      color: #f8faff;
     }
 
     .project-card p {
@@ -185,9 +224,13 @@
     }
 
     .project-card a {
-      color: #c4b5fd;
+      color: #b9a9ff;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .project-card span {
+      color: var(--muted);
     }
 
     .list-card ul {
@@ -197,11 +240,11 @@
 
     .list-card li {
       margin-bottom: 10px;
-      color: var(--muted);
+      color: #d4def9;
     }
 
     .list-card strong {
-      color: var(--text);
+      color: #ffffff;
     }
 
     .contact-links {
@@ -211,7 +254,7 @@
     }
 
     .contact-links a {
-      color: #c4b5fd;
+      color: #b9a9ff;
       text-decoration: none;
       font-weight: bold;
     }
@@ -235,11 +278,15 @@
 
     @media (max-width: 700px) {
       .hero h1 {
-        font-size: 34px;
+        font-size: 38px;
       }
 
       .hero p {
         font-size: 16px;
+      }
+
+      .container {
+        padding: 20px 16px 56px;
       }
     }
   </style>
@@ -250,13 +297,13 @@
     <section class="hero">
       <h1>Laíza Costa</h1>
       <p>
-        Data Scientist com foco em Machine Learning, NLP, IA generativa e aplicações de dados para produtos, recomendação e automação.
+        Data Scientist | Analytics | Machine Learning | NLP | IA generativa | Computational Linguistics.
       </p>
 
       <div class="hero-buttons">
         <a class="btn btn-primary" href="https://github.com/LaizaCostaa" target="_blank">GitHub</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/in/la%C3%ADza-costa-ba86a62a9/" target="_blank">LinkedIn</a>
         <a class="btn btn-secondary" href="mailto:laizamare@hotmail.com">Email</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/la%C3%ADza-costa-ba86a62a9/" target="_blank">LinkedIn</a>
         <a class="btn btn-secondary" href="https://lookerstudio.google.com/reporting/6a72a9cf-9a1b-4da6-8703-4aea5c166ae9" target="_blank">Portfólio</a>
       </div>
     </section>
@@ -265,9 +312,7 @@
       <h2>Sobre</h2>
       <div class="card">
         <p>
-          Cientista de Dados com 2 anos de experiência no desenvolvimento de soluções em Machine Learning e LLMs, com atuação em modelos preditivos,
-          sistemas de recomendação, recrutamento inteligente e automação com IA generativa. Possui mestrado em Linguística, trazendo uma visão forte
-          sobre linguagem para projetos que envolvem Inteligência Artificial e NLP.
+          Cientista de Dados com experiência em em Machine Learning e LLMs, com projetos de modelos preditivos, sistemas de recomendação e automação com IA generativa. Possui experiência em iniciativas para recrutamento e seleção inteligente e geração automática de documentação usando IA generativa e LLMs e na construção de sistemas recomendação de produtos
         </p>
       </div>
     </section>
@@ -303,8 +348,7 @@
           <h3>Data Scientist — Instituto Atlântico</h3>
           <div class="period">nov 2024 - atual</div>
           <div>
-            Atuação em contexto de R&amp;D com recomendação de produtos, auditoria de licenças, engenharia de atributos,
-            experimentação contínua, modelos preditivos e aplicação de IA generativa e LLMs para geração e automação de textos.
+            Vivência em contexto R&amp;D contribuindo com: Soluções de recomendação de produtos e auditoria de licenças utilizando ML; Exploração e análise de dados, engenharia de atributos e experimentação contínua para melhoria do produto; Construção de modelos preditivos com Machine Learning; Aplicação de IA Generativa e LLMs (Lhama) para geração e automatização de textos; Aplicação de técnicas de engenharia de prompt; Adaptação de métricas clássicas de Machine Learning para avaliação de LLMs
           </div>
         </div>
 
@@ -312,34 +356,15 @@
           <h3>Data Scientist | Analytics — Marias S/A</h3>
           <div class="period">mar 2024 - nov 2024</div>
           <div>
-            Desenvolvimento de soluções para recrutamento inteligente com recomendações entre candidatas e vagas usando IA generativa,
-            além de dashboards analíticos, automações e proposição de soluções escaláveis para desafios de negócio.
+            Colaboração com equipes de RH para acelerar e aumentar a precisão dos processos de recrutamento de mulheres das empresas, gerando recomendações assertivas entre candidatas e vagas usando IA Generativa; Desenvolvimento de automações e dashboards para perfis de candidatas e compatibilidade comvagas; Identificação de oportunidades de melhoria e proposição de soluções escaláveis para desafios técnicos e de negócio
           </div>
         </div>
 
         <div class="timeline-item">
-          <h3>Portfólio de Projetos</h3>
-          <div class="period">jun 2021 - atual</div>
-          <div>
-            Desenvolvimento de projetos de Machine Learning, regressão, classificação, NLP, IA generativa e sistemas de recomendação,
-            incluindo previsão de receita, recomendação híbrida, matching de currículos e geração automática de documentação.
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Analista de Dados | Extensionista — UBTECH / Fábrica de Software - Unipê</h3>
+          <h3>Analista de Dados | Extensionista — UBTECH / Unipê</h3>
           <div class="period">mar 2021 - ago 2021</div>
           <div>
-            ETL, integração com APIs, análise exploratória em Python e dashboards em Power BI
-            para indicadores de vacinação contra COVID-19.
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Analista de Faturamento — Vijai Elétrica LTDA</h3>
-          <div class="period">mar 2011 - fev 2013</div>
-          <div>
-            Emissão de notas fiscais, análise de importação, relatórios operacionais e melhorias em planilhas e fluxos de faturamento.
+            ETL, integração com APIs, análise exploratória em Python e dashboards em Power BI para indicadores de vacinação contra COVID-19.
           </div>
         </div>
       </div>
@@ -425,7 +450,7 @@
             <li><strong>Structuring Machine Learning Projects</strong> — DeepLearning.AI</li>
             <li><strong>Unsupervised Learning, Recommenders, Reinforcement Learning</strong> — DeepLearning.AI</li>
             <li><strong>Machine Learning with Python</strong> — IBM</li>
-            <li><strong>Google Data Analytics Specialization</strong> — Google</li>
+            <li><strong>Google Data Analytics (PT) Specialization</strong> — Google</li>
             <li><strong>Estatística</strong> — Enap</li>
             <li><strong>SQL</strong> — DevMedia</li>
             <li><strong>Lógica de Programação</strong> — DevMedia</li>
